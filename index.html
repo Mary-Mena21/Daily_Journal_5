@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title> Daily Journal</title>
+    <link rel="stylesheet" href="main.css" />
+    <!-- icon in tab -->
+    <link rel="shortcut icon" href="img/Book.png" type="x-icon"  /> 
+    <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Palanquin:wght@600&family=Poiret+One&display=swap" rel="stylesheet">
+
+
+  </head>
+  <body >
+    <section class= "container">
+      <header>
+       
+        <!-- Form -->
+        <form class="entryForm" id="form">
+          <section class="quoteBlockForm">
+            <!-- <h1 class="name">Mariana Mena</h1> -->
+            <!-- <input type="text" placeholder="entryDate"> -->
+          </section>
+            <!-- <hr /> -->
+      </header>
+      <section class="logo_h1">
+      <img class="logo" 
+      src="img/Daily_Journal_Logo.jpeg"
+      alt="Daily_Journal_Logo"
+      style="width: 10%; height: 10%"
+      />
+      <!-- <h2>Daily Journal</h2> -->
+      <h1 class="name">Mariana Mena</h1>
+      
+    </section>
+    <main >
+
+      <section class="entry">
+
+          <!-- entryDate-->
+          <fieldset class="entry__date" id="entryDate">
+          </fieldset>
+
+          <!-- entryConcept-->
+          <fieldset class="entry__concepts" id="entryConcept">
+          </fieldset>
+
+          <!-- entryLearn-->
+          <fieldset class="entry__learn" id="entryLearn">
+          </fieldset>
+
+          <!-- Mood Central-->
+            <fieldset class="entry__mood" id="entryMood">
+            <label for="entryMood">Mood of the day</label>
+            <select class ="inputStyle" name="entryMood" id="mood"> </select>
+          </fieldset>
+        </form>
+      </section>
+
+      <!-- <hr/> -->
+        <!-- Notes button"------------------------>
+        <section class="entry__button">
+          <button id="submit" type="button">Record Journal Entry</button>
+        </section>
+        <!-- Notes-->
+        <section class= "content" id ="content" value=""></section><!--  -->
+        <hr/>
+
+          <!-- Quotes button"---------------------->
+        <section class="entry__button">
+          <button id = "Quote" type="button">Record Quote</button>
+        </section>       
+          <!-- Quotes label -->
+        <fieldset class="entry__learn">
+          <label   for="entryDate">Quote Entry</label>
+          <input id= "quoteTextArea" type="text" class="inputStyle" placeholder="Coding Quote" value=""/>
+        </fieldset>
+          <!-- Quotes-->
+        <section id="listComponent"></section><!--  -->
+
+
+
+        <article id="entries"></article>
+    </main>
+      <footer class="footer">
+        <hr/>
+        <a href="https://github.com/Mary-Mena21/Daily_Journal_3"> 
+        <p><i class="fa fa-github fa-2x"></i>
+          https://github.com/Mary-Mena21</p></a>
+          <br>
+        <p>&copy;2022 NSS.com</p>
+    </footer>
+      </section>
+    <!-- script -->
+    <script type="module" src="./scripts/main.js"></script>
+  </body>
+</html>

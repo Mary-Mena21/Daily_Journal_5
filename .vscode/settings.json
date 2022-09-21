@@ -1,0 +1,8 @@
+{
+    "liveServer.settings.port": 5503,
+    "cSpell.enableFiletypes": ["log", "makefile"],
+    "cSpell.words": ["Flexbox"],
+    "workbench.tree.indent": 16,
+    "indentRainbow.lightIndicatorStyleLineWidth": 1,
+    "editor.tabSize": 8
+}
