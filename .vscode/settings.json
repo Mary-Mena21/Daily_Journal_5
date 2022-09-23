@@ -4,5 +4,8 @@
     "cSpell.words": ["Flexbox"],
     "workbench.tree.indent": 16,
     "indentRainbow.lightIndicatorStyleLineWidth": 1,
-    "editor.tabSize": 8
+    "editor.tabSize": 8,
+    "editor.fontSize": 18,
+    "files.autoSave": "afterDelay",
+    "editor.renderWhitespace": "all"
 }

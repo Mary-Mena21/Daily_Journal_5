@@ -1,56 +1,75 @@
-/* ------------------------------Export Quotes------------------------ */
-const dataList = [
-    {
-        quote: "Code can't lie comments can.",
-    },
-];
+/* -----------API----------- */
+const API = "http://localhost:4444";
+
+const applicationState = {
+    quotesData: [],
+    notesData: [],
+    moodOptionsData: [],
+};
+
+/* -----------------Export Quote--------------- */
+export const fetchQuotes = async () => {
+    const quotes = await fetch(`${API}/quotesData`);
+    const quotesJS = await quotes.json();
+    applicationState.quotesData = quotesJS;
+};
 
 export const getQuotes = () => {
-    const copyDataList = dataList.map((quote) => ({ ...quote }));
-    console.log("copyDataList : ", copyDataList);
-    return copyDataList;
+    const copyQuotes = applicationState.quotesData.map((quote) => ({
+        ...quote,
+    }));
+    return copyQuotes;
 };
 
-export const AddNewQuote = (quote) => {
-    dataList.push(quote);
-    document.dispatchEvent(new CustomEvent("quote")); 
+export const AddNewQuote = async (newQuote) => {
+    //applicationState.quotesData.push(newQuote);
+    const fetchOptions = {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify(newQuote),
+    };
+    const response = await fetch(`${API}/quotesData`, fetchOptions);
+    const responseJSON = await response.json(response);
+
+    document.dispatchEvent(new CustomEvent("quote"));
 };
 
-/* ------------------------------Export Notes------------------------ */
-const notes = [
-    {
-        date: "07/24/2022",
-        concept: " GitHub ",
-        entry: "Finally, I submit my first pull request to GitHub.",
-        mood: "Passion",
-    },
-];
+/* ---------------Export Notes------------- */
+export const fetchNotes = async () => {
+    const notes = await fetch(`${API}/notesData`);
+    const notesJS = await notes.json();
+    applicationState.notesData = notesJS;
+};
 
 export const getNotes = () => {
-    const notesCopy = notes.map((note) => ({ ...note }));
+    const notesCopy = applicationState.notesData.map((note) => ({ ...note }));
     return notesCopy;
 };
 
-/* ------------------------------Export Moods------------------------ */
-const moodOptions = ["", "Happy", "Passion", "Curious", "Ok", "Unhappy"];
+export const AddNewNote = async (newNote) => {
+    const fetch_Notes = {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify(newNote),
+    };
+    const response = await fetch(`${API}/notesData , fetch_Notes`);
+    const responseJS = await response.json(response);
 
-export const getMoods = () => {
-    const moodsCopy = [...moodOptions];
-    //copy the array Deep clone
-    return moodsCopy;
-};
-
-export const AddNewNote = (note) => {
-        notes.push(note);
-    /* const newId = getNewId(); */
-    /*  note.id = newId; */
     document.dispatchEvent(new CustomEvent("note"));
 };
 
-/* ------------------------------ID in Order------------------------ */
+/* --------------Export Moods----------- */
+export const fetchMoods = async () => {
+    const moods = await fetch(`${API}/moodOptionsData`);
+    const moodsJS = await moods.json();
+    applicationState.moodOptionsData = moodsJS;
+};
 
-/* const getNewId = () => {
-    const notesCopy = getNotes();
-    let highestId = notesCopy.sort((a, b) => b.id - a.id)[0].id;
-    return highestId + 1;
-}; */
+export const getMoods = () => {
+    const moodsCopy = [...applicationState.moodOptionsData];
+    return moodsCopy;
+};
