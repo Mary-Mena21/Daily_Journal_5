@@ -49,14 +49,14 @@ export const getNotes = () => {
 };
 
 export const AddNewNote = async (newNote) => {
-    const fetch_Notes = {
+    const fetchOptions = {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
         },
         body: JSON.stringify(newNote),
     };
-    const response = await fetch(`${API}/notesData , fetch_Notes`);
+    const response = await fetch(`${API}/notesData` , fetchOptions);
     const responseJS = await response.json(response);
 
     document.dispatchEvent(new CustomEvent("note"));
@@ -73,3 +73,4 @@ export const getMoods = () => {
     const moodsCopy = [...applicationState.moodOptionsData];
     return moodsCopy;
 };
+//,"id": 1

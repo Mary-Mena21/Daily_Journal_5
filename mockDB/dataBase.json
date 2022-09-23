@@ -1,20 +1,12 @@
 {
   "quotesData": [
     {
-      "id": 1,
-      "quote": "Code can't lie comments can."
+      "quote": "Code can't lie comments can.",
+      "id": 1
     },
     {
-      "id": 1,
-      "quote": "hi4"
-    },
-    {
-      "quote": "Hi 5",
+      "quote": "m",
       "id": 2
-    },
-    {
-      "quote": "Hi 6",
-      "id": 3
     }
   ],
   "notesData": [

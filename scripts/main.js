@@ -19,4 +19,9 @@ render();
 
 document.addEventListener("quote", (event) => {
     render();
-    });
+});
+    
+
+document.addEventListener("note", (event) => {
+    render();
+});

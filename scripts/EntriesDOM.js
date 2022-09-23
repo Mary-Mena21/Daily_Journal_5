@@ -1,5 +1,6 @@
 /* -----------------------------Import--------------------------     */
 import { getNotes, getMoods, AddNewNote } from "./database.js";
+//import{displayMoods} from "./EntriesDOM.js"
 /* -----------------------Entries----------------------     */
 export const displayEntries = () => {
     const Entries = `
@@ -16,9 +17,18 @@ export const displayEntries = () => {
         <textarea  id="learn" class ="inputStyle" type="text" name="entryLearn" >
         </textarea>
         </fieldset>
+        <fieldset class="entry__mood" id="entryMood">
+        <label for="entryMood">Mood of the day</label>
+        <select class ="inputStyle" name="entryMood" id="mood">
+        ${displayMoods()}
+        </select></fieldset> 
         <section class="entry__button">
         <button id="submit" type="button">Record Journal Entry</button>
         </section>
+        </fieldset>
+       
+        ${displayNotes()}
+       
         <section class= "content" id ="content" value=""></section><!--  -->
         <hr/>
         <section class="entry__button">
@@ -27,34 +37,33 @@ export const displayEntries = () => {
         <fieldset class="entry__learn">
         <label   for="entryDate">Quote Entry</label>
         <input id= "quoteTextArea" type="text" class="inputStyle" placeholder="Coding Quote" value=""/>
-        </fieldset>`;
-    /* -----------------------Entries-----Mood---------------------------*/
-
+      
+        `;
+    return Entries;
+};
+/* ------------------Entries-----Mood---------------------*/
+const displayMoods = () => {
     const moodOptions = getMoods();
     let Options = ` `;
-    Options += `<fieldset class="entry__mood" id="entryMood">
-        <label for="entryMood">Mood of the day</label>
-        <select class ="inputStyle" name="entryMood" id="mood"> `;
     for (let mood of moodOptions) {
         Options += `
             <option value="${mood}">${mood}</option>`;
     }
-    Options += `</select></fieldset>`;
-    //document.getElementById("mood").innerHTML = Options;
-
+    return Options;
+};
 /* -----Record-Entries------EventListener-----Record-Entries-------- */
+const displayNotes = () => {
     const notes = getNotes();
     let notes_tables = ` `;
     for (const note of notes) {
-        notes_tables += `<fieldset><ul>`;
-        for (const entry in note) {
-            notes_tables += `<li> ${note[entry]} </li>`;
+            notes_tables += `  <fieldset><ul>`;
+        for (let item in note) {
+            notes_tables += `<li> ${note[item]} </li>`;
         }
-        notes_tables += `</ul> </fieldset>`;
+        notes_tables += ` </ul> </fieldset> `;
     }
-    return Entries;
+    return notes_tables;
 };
-
 
 /* --------------------------TEST EVENTLISTENER------------------------- */
 document.addEventListener("click", (e) => {
@@ -75,8 +84,4 @@ document.addEventListener("click", (e) => {
         };
         AddNewNote(NewNote);
     }
-});
-
-document.addEventListener("note", (event) => {
-    displayEntries();
 });
