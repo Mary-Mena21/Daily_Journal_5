@@ -73,4 +73,3 @@ export const getMoods = () => {
     const moodsCopy = [...applicationState.moodOptionsData];
     return moodsCopy;
 };
-//,"id": 1

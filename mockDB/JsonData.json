@@ -1,0 +1,50 @@
+{
+  "quotesData": [
+    {
+      "quote": "Code can't lie comments can.",
+      "id": 1
+    },
+    {
+      "quote": "m",
+      "id": 2
+    }
+  ],
+  "notesData": [
+    {
+      "date": "07/24/2022",
+      "concept": " GitHub ",
+      "entry": "Finally, I submit my first pull request to GitHub.",
+      "mood": "Passion",
+      "id": 1
+    },
+    {
+      "date": "2022-09-08",
+      "concept": "m",
+      "entry": "        m",
+      "mood": "Happy",
+      "id": 2
+    },
+    {
+      "date": "2022-08-31",
+      "concept": "mmmm",
+      "entry": "       mmmm ",
+      "mood": "Passion",
+      "id": 3
+    },
+    {
+      "date": "2022-08-28",
+      "concept": "h",
+      "entry": "        h",
+      "mood": "Ok",
+      "id": 4
+    }
+  ],
+  "moodOptionsData": [
+    "",
+    "Happy",
+    "Passion",
+    "Curious",
+    "Ok",
+    "Unhappy"
+  ]
+}

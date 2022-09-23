@@ -1,5 +1,7 @@
 /* -----------------------------Import--------------------------     */
-import { getNotes, getMoods, AddNewNote } from "./database.js";
+import { AddNewNote } from "./database.js";
+import { displayMoods } from "./Mood.js";
+import {displayNotes} from "./Notes.js"
 //import{displayMoods} from "./EntriesDOM.js"
 /* -----------------------Entries----------------------     */
 export const displayEntries = () => {
@@ -26,9 +28,7 @@ export const displayEntries = () => {
         <button id="submit" type="button">Record Journal Entry</button>
         </section>
         </fieldset>
-       
-        ${displayNotes()}
-       
+        ${displayNotes()}   
         <section class= "content" id ="content" value=""></section><!--  -->
         <hr/>
         <section class="entry__button">
@@ -41,31 +41,22 @@ export const displayEntries = () => {
         `;
     return Entries;
 };
-/* ------------------Entries-----Mood---------------------*/
-const displayMoods = () => {
-    const moodOptions = getMoods();
-    let Options = ` `;
-    for (let mood of moodOptions) {
-        Options += `
-            <option value="${mood}">${mood}</option>`;
-    }
-    return Options;
-};
-/* -----Record-Entries------EventListener-----Record-Entries-------- */
-const displayNotes = () => {
-    const notes = getNotes();
-    let notes_tables = ` `;
-    for (const note of notes) {
-            notes_tables += `  <fieldset><ul>`;
-        for (let item in note) {
-            notes_tables += `<li> ${note[item]} </li>`;
-        }
-        notes_tables += ` </ul> </fieldset> `;
-    }
-    return notes_tables;
-};
 
-/* --------------------------TEST EVENTLISTENER------------------------- */
+// /* ---Record-Entries----EventListener-----Record-Entries------ */
+// const displayNotes = () => {
+//     const notes = getNotes();
+//     let notes_tables = ` `;
+//     for (const note of notes) {
+//         notes_tables += `  <fieldset><ul>`;
+//         for (let item in note) {
+//             notes_tables += `<li> ${note[item]} </li>`;
+//         }
+//         notes_tables += ` </ul> </fieldset> `;
+//     }
+//     return notes_tables;
+// };
+
+/* ---------- EVENTLISTENER------------------------- */
 document.addEventListener("click", (e) => {
     //e.preventDefault();
     if (e.target.id === "submit") {
