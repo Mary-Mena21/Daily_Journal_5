@@ -1,8 +1,6 @@
-/* -----------------------------Import--------------------------     */
-import { AddNewNote } from "./database.js";
 import { displayMoods } from "./Mood.js";
-import {displayNotes} from "./Notes.js"
-//import{displayMoods} from "./EntriesDOM.js"
+import { displayNotes } from "./Notes.js";
+
 /* -----------------------Entries----------------------     */
 export const displayEntries = () => {
     const Entries = `
@@ -37,42 +35,6 @@ export const displayEntries = () => {
         <fieldset class="entry__learn">
         <label   for="entryDate">Quote Entry</label>
         <input id= "quoteTextArea" type="text" class="inputStyle" placeholder="Coding Quote" value=""/>
-      
         `;
     return Entries;
 };
-
-// /* ---Record-Entries----EventListener-----Record-Entries------ */
-// const displayNotes = () => {
-//     const notes = getNotes();
-//     let notes_tables = ` `;
-//     for (const note of notes) {
-//         notes_tables += `  <fieldset><ul>`;
-//         for (let item in note) {
-//             notes_tables += `<li> ${note[item]} </li>`;
-//         }
-//         notes_tables += ` </ul> </fieldset> `;
-//     }
-//     return notes_tables;
-// };
-
-/* ---------- EVENTLISTENER------------------------- */
-document.addEventListener("click", (e) => {
-    //e.preventDefault();
-    if (e.target.id === "submit") {
-        console.log(addEventListener("click", e));
-        const NewDate = document.getElementById("date")?.value;
-        const newConcept = document.getElementById("concept")?.value;
-        const newEntry = document.getElementById("learn")?.value;
-        const newMood = document.getElementById("mood")?.value;
-        //let NewDate = new Date(Date.now()).toLocaleDateString();
-
-        const NewNote = {
-            date: NewDate,
-            concept: newConcept,
-            entry: newEntry,
-            mood: newMood,
-        };
-        AddNewNote(NewNote);
-    }
-});

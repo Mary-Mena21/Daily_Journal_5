@@ -56,7 +56,7 @@ export const AddNewNote = async (newNote) => {
         },
         body: JSON.stringify(newNote),
     };
-    const response = await fetch(`${API}/notesData` , fetchOptions);
+    const response = await fetch(`${API}/notesData`, fetchOptions);
     const responseJS = await response.json(response);
 
     document.dispatchEvent(new CustomEvent("note"));

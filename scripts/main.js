@@ -5,7 +5,6 @@ import { displayEntries } from "./EntriesDOM.js";
 const QuoteContainer = document.getElementById("listComponent");
 const EntriesContainer = document.getElementById("Entries");
 
-
 const render = async () => {
     await fetchQuotes();
     await fetchNotes();
@@ -13,14 +12,12 @@ const render = async () => {
 
     QuoteContainer.innerHTML = displayQuotes();
     EntriesContainer.innerHTML = displayEntries();
-
 };
 render();
 
 document.addEventListener("quote", (event) => {
     render();
 });
-    
 
 document.addEventListener("note", (event) => {
     render();
