@@ -1,8 +1,9 @@
-# Daily_Journal
-Daily_Journal_Mariana
 
 # **Daily Journal Part 5**
 In parts 1-4 we have made a functioning Daily Journal app.  The only thins is that is does not persist the data.  Now that we have learned about using json-server to mimic an API with GET, PUT, POST and DELETE, finish up your Daily Journal to include these functionalities.
+
+![Journal_5](https://user-images.githubusercontent.com/85176043/194803047-1b62a0ba-5577-4a35-bc77-35452168b645.jpg)
+
 
 Requirements
 
